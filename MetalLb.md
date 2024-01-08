@@ -68,7 +68,7 @@ service by default
 * MetalLB
 * Docker
 
-## Environment detail (OS Version )
+# Environment detail (OS Version )
 
 * Distributor ID:	Ubuntu<br>
 * Description:	Ubuntu 22.04.3 LTS<br>

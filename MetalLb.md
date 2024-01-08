@@ -5,11 +5,11 @@
 [Deﬁnition of Docker](#deﬁnition-of-docker)<br>
 [Definition of Minikube](#definition-of-minikube)<br>
 [Requirement of MetalLB](#requirement-of-metallb)<br>
-[Environment detail OS Version](#environment-detail-os-version)<br>
+[Environment detail OS Version](##environment-detail-os-version)<br>
 [Configuration Required](#configuration-required)<br>
 [Command for the setup](#command-for-the-setup)<br>
-[Install Docker](#install-docker)<br>
-[Install kubeadm, kubelet, and kubectl](#install-kubeadm-kubelet-and-kubectl)<br>
+[Install Docker](##install-docker)<br>
+[Install kubeadm, kubelet, and kubectl](##install-kubeadm-kubelet-and-kubectl)<br>
 [Installation of Minikube ](#installation-of-minikube)<br>
 [Installation of the MetalLB](#installation-of-the-metallb)<br>
 [Create a deployment with a sample application](#create-a-deployment-with-a-sample-application)

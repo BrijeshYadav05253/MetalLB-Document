@@ -118,7 +118,7 @@ package manager to upgrade the currently installed packages to their latest vers
 
 #### Step 2-
 
-# Install Docker  :
+# Install Docker
 
 Kubernetes relies on Docker for containerization. Install Docker using the following commands:
 
@@ -163,7 +163,7 @@ systemctl status docker
 
 
 #### Step 3:
-# Install kubeadm, kubelet, and kubectl :
+# Install kubeadm, kubelet, and kubectl
 These are the essential components of Kubernetes.
 
 #### Command 1:

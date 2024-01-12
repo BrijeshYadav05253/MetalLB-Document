@@ -4,6 +4,9 @@
 [Definition of MetalLB](#definition-of-metallb)<br>
 [Deﬁnition of Docker](#deﬁnition-of-docker)<br>
 [Definition of Minikube](#definition-of-minikube)<br>
+[What is the difference between MetalLB and Nginx?](#what-is-the-difference-between-metallb-and-nginx)<BR>
+[What do you mean by cluster?](#what-do-you-mean-by-cluster)<BR>
+[What do you mean by 'orchestration platform'?](#what-do-you-mean-by-orchestration-platform)<BR>
 [Requirement of MetalLB](#requirement-of-metallb)<br>
 [Environment detail OS Version](#environment-detail-os-version)<br>
 [Configuration Required](#configuration-required)<br>
@@ -89,6 +92,31 @@ A minimum 20GB free space is reqiured.
 * Model name: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
 * RAM size is 8 GB
 * Storage 256 GB
+
+# What is the difference between MetalLB and Nginx?
+
+MetalLB and Nginx serve different roles in managing network traffic within a Kubernetes environment. 
+
+#### MetalLB
+
+* MetalLB is like a traffic manager for Kubernetes clusters on bare-metal servers. It helps external users connect to services by handling IP addresses and balancing the load on the network. 
+* MetalLB focuses on network protocols like TCP and UDP.
+
+#### Nginx
+
+* Nginx, originally designed as a web server, is a versatile tool. It acts as a traffic cop for web traffic, managing HTTP and HTTPS requests and serving as a reverse proxy. 
+* Nginx has a broader job, handling web traffic but also being adaptable for other protocols.
+
+# What do you mean by cluster?
+
+* A Kubernetes cluster is like a group of computers that team up to make sure everything runs smoothly. In this group, there's one computer that takes charge (called the master node) and others that do the actual work (called worker nodes). They communicate a lot, share tasks, and help each other out.
+* It is a way for computers to work together seamlessly, making it easy to manage and run various applications without any hiccups. The cluster ensures that everything stays organized and efficient, like a well-coordinated team of computers.
+
+# What do you mean by 'orchestration platform'?
+
+* An "orchestration platform" in computing refers to a system or tool that manages and coordinates the deployment, configuration, and operation of various software components or services within a complex application or infrastructure. It's like a conductor in an orchestra, coordinating the different instruments to play together harmoniously.
+
+
   
 # Command for the setup
 #### Step 1-System Update
@@ -159,7 +187,32 @@ systemctl status docker
 ```
 * Above command is used to check the status of docker running or not. 
 
-![Alt text](<Screenshot from 2024-01-03 16-45-19.png>)
+● docker.service - Docker Application Container Engine<br>
+     Loaded: loaded (/lib/systemd/system/docker.<br>service; enabled; vendor preset: enabled)<br>
+     Active: active (running) since Fri <br>2024-01-12 10:04:48 IST; 2h 58min ago<br>
+TriggeredBy: ● docker.socket<br>
+       Docs: https://docs.docker.com<br>
+   Main PID: 1979 (dockerd)<br>
+      Tasks: 10<br>
+     Memory: 63.2M<br>
+        CPU: 1.246s<br>
+     CGroup: /system.slice/docker.service<br>
+             └─1979 /usr/bin/dockerd -H fd:// <br>--containerd=/run/containerd/containerd.sock<br>
+
+Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.505998938+05:30" level=info msg="Starting up"<br>
+Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.513461785+05:30" level=info msg="detected 127.0.0.53 na><br>
+Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.861978621+05:30" level=info msg="[graphdriver] using pr><br>
+Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.868846630+05:30" level=info msg="Loading containers: st><br>
+Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.287399597+05:30" level=info msg="Default bridge 
+..
+docker><br>
+Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.348775529+05:30" level=info msg="Loading containers: do><br>
+Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.448856144+05:30" level=info msg="Docker daemon" commit=><br>
+Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.449245153+05:30" level=info msg="Daemon has completed i><br>
+Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.495989834+05:30" level=info msg="API listen on /run/doc><br>
+Jan 12 10:04:48 brijesh-Inspiron-5567 systemd[1]: Started Docker Application Container Engine.
+
+
 
 
 #### Step 3:

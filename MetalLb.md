@@ -975,13 +975,13 @@ brijesh@brijesh-Inspiron-5567:~$
   #### Command:
 
   ```
-  kubectl create deployment nginx \
+  kubectl create deployment nginx 
 --image quay.io/redhattraining/nginx:1.21 --port 80
   ```
 ```
 brijesh@brijesh-Inspiron-5567:~$ kubectl create deployment nginx \
 --image quay.io/redhattraining/nginx:1.21 --port 80
-error: failed to create deployment: deployments.apps "nginx" already exists
+deployment.apps/nginx created
 brijesh@brijesh-Inspiron-5567:~$ 
 
 

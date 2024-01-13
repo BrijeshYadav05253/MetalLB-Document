@@ -187,32 +187,33 @@ systemctl status docker
 ```
 * Above command is used to check the status of docker running or not. 
 
-● docker.service - Docker Application Container Engine<br>
-     Loaded: loaded (/lib/systemd/system/docker.<br>service; enabled; vendor preset: enabled)<br>
-     Active: active (running) since Fri <br>2024-01-12 10:04:48 IST; 2h 58min ago<br>
-TriggeredBy: ● docker.socket<br>
-       Docs: https://docs.docker.com<br>
-   Main PID: 1979 (dockerd)<br>
-      Tasks: 10<br>
-     Memory: 63.2M<br>
-        CPU: 1.246s<br>
-     CGroup: /system.slice/docker.service<br>
-             └─1979 /usr/bin/dockerd -H fd:// <br>--containerd=/run/containerd/containerd.sock<br>
+```
+brijesh@brijesh-Inspiron-5567:~$ systemctl status docker
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset>
+     Active: active (running) since Sat 2024-01-13 10:23:07 IST; 37min ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 1993 (dockerd)
+      Tasks: 10
+     Memory: 95.6M
+        CPU: 577ms
+     CGroup: /system.slice/docker.service
+             └─1993 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/cont>
 
-Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.505998938+05:30" level=info msg="Starting up"<br>
-Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.513461785+05:30" level=info msg="detected 127.0.0.53 na><br>
-Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.861978621+05:30" level=info msg="[graphdriver] using pr><br>
-Jan 12 10:04:47 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:47.868846630+05:30" level=info msg="Loading containers: st><br>
-Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.287399597+05:30" level=info msg="Default bridge 
-..
-docker><br>
-Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.348775529+05:30" level=info msg="Loading containers: do><br>
-Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.448856144+05:30" level=info msg="Docker daemon" commit=><br>
-Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.449245153+05:30" level=info msg="Daemon has completed i><br>
-Jan 12 10:04:48 brijesh-Inspiron-5567 dockerd[1979]: time="2024-01-12T10:04:48.495989834+05:30" level=info msg="API listen on /run/doc><br>
-Jan 12 10:04:48 brijesh-Inspiron-5567 systemd[1]: Started Docker Application Container Engine.
+Jan 13 10:23:06 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:06.>
+Jan 13 10:23:06 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:06.>
+Jan 13 10:23:06 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:06.>
+Jan 13 10:23:06 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:06.>
+Jan 13 10:23:06 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:06.>
+Jan 13 10:23:06 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:06.>
+Jan 13 10:23:07 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:07.>
+Jan 13 10:23:07 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:07.>
+Jan 13 10:23:07 brijesh-Inspiron-5567 dockerd[1993]: time="2024-01-13T10:23:07.>
+Jan 13 10:23:07 brijesh-Inspiron-5567 systemd[1]: Started Docker Application Co>
+lines 1-22/22 (END)
 
-
+```
 
 
 #### Step 3:
@@ -224,8 +225,49 @@ These are the essential components of Kubernetes.
 ```
 sudo apt-get install -y apt-transport-https curl
 ```
+```
+brijesh@brijesh-Inspiron-5567:~$ sudo apt-get install -y apt-transport-https curl
+[sudo] password for brijesh: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+curl is already the newest version (7.81.0-1ubuntu1.15).
+apt-transport-https is already the newest version (2.4.11).
+The following packages were automatically installed and are no longer required:
+  gyp javascript-common libc-ares2 libevent-core-2.1-7 libevent-pthreads-2.1-7
+  libjs-events libjs-highlight.js libjs-inherits libjs-is-typedarray libjs-psl
+  libjs-source-map libjs-sprintf-js libjs-typedarray-to-buffer libmecab2
+  libnode-dev libnode72 libprotobuf-lite23 libssl-dev libuv1-dev mecab-ipadic
+  mecab-ipadic-utf8 mecab-utils node-abbrev node-ansi-regex node-ansi-styles
+  node-ansistyles node-are-we-there-yet node-arrify node-asap node-asynckit
+  node-balanced-match node-brace-expansion node-chownr node-clean-yaml-object
+  node-color-convert node-color-name node-commander node-core-util-is
+  node-decompress-response node-delayed-stream node-delegates node-depd
+  node-diff node-encoding node-end-of-stream node-err-code
+  node-escape-string-regexp node-fancy-log node-foreground-child
+  node-fs.realpath node-function-bind node-get-stream node-glob node-growl
+  node-has-flag node-has-unicode node-hosted-git-info node-iconv-lite
+  node-iferr node-imurmurhash node-indent-string node-inflight node-inherits
+  node-ini node-ip node-ip-regex node-is-buffer node-is-plain-obj
+  node-is-typedarray node-isarray node-isexe node-json-parse-better-errors
+  node-jsonparse node-kind-of node-lodash-packages node-lowercase-keys
+  node-lru-cache node-mimic-response node-minimatch node-minimist
+  node-minipass node-mute-stream node-negotiator node-npm-bundled node-once
+  node-osenv node-p-cancelable node-p-map node-path-is-absolute
+  node-process-nextick-args node-promise-inflight node-promise-retry
+  node-promzard node-pump node-quick-lru node-read node-readable-stream
+  node-resolve node-retry node-safe-buffer node-set-blocking node-signal-exit
+  node-slash node-slice-ansi node-source-map node-spdx-correct
+  node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids
+  node-sprintf-js node-stealthy-require node-string-decoder
+  node-supports-color node-text-table node-time-stamp node-tmatch
+  node-typedarray-to-buffer node-universalify node-util-deprecate
+  node-validate-npm-package-license node-webidl-conversions node-whatwg-fetch
+  node-wrappy node-yallist nodejs-doc
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
 
-![Alt text](<Screenshot from 2024-01-03 16-44-50.png>)
+```
 * **-y:** This is an option for apt-get that automatically answers "yes" to any prompts that might appear
 during the installation process.
 * **apt-transport-https:** This is the name of the package you want to install. It provides the ability to
@@ -298,8 +340,19 @@ with the name kubernetes.list.
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 ```
+```
+brijesh@brijesh-Inspiron-5567:~$ sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+kubeadm is already the newest version (1.29.0-1.1).
+kubectl is already the newest version (1.29.0-1.1).
+kubelet is already the newest version (1.29.0-1.1).
+0 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
+brijesh@brijesh-Inspiron-5567:~$ 
 
-![Alt text](<Screenshot from 2024-01-03 16-38-42.png>)
+```
 * **kubelet:** This is one of the Kubernetes components. The kubelet is an agent that runs on each node
 in the cluster. It ensures that containers are running in a Pod.
 * **kubeadm:** This is a tool used to bootstrap and manage a Kubernetes cluster. It simpliﬁes the process
@@ -329,15 +382,22 @@ initialize the control plane of the Kubernetes cluster.
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 amd64
 ```
-![Alt text](<Screenshot from 2024-01-03 16-41-59.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
+amd64
+--2024-01-13 11:12:33--  https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
+Resolving storage.googleapis.com (storage.googleapis.com)... 2404:6800:4009:81b::201b, 2404:6800:4009:821::201b, 2404:6800:4009:822::201b, ...
+Connecting to storage.googleapis.com (storage.googleapis.com)|2404:6800:4009:81b::201b|:443... connected.
+```
 
 #### Command 2:
 
 ```
 cp minikube-linux-amd64 /usr/local/bin/minikube
 ```
-![Alt text](<Screenshot from 2024-01-03 16-41-30.png>)
-
+```
+brijesh@brijesh-Inspiron-5567:-$ sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+```
 
 * **cp:** This is used copying files or directories.
   
@@ -353,8 +413,9 @@ it to "minikube" without the "-linux-amd64" part.
 ```
 chmod 755 /usr/local/bin/minikube
 ```
-![Alt text](<Screenshot from 2024-01-03 16-41-14.png>)
-
+```
+brijesh@brijesh-Inspiron-5567:-$ sudo chmod 755 /usr/local/bin/minikube
+```
 * Above command is used to provide execution permission.
 * **chmod:** This command is used to chnaging the permissions of files or directories.
 *  **755:** This is a numeric representation of the permissions you want to set. In Linux ﬁle permissions,
@@ -369,8 +430,12 @@ This command is used to check the Minikube version.
 ```
 minikube version
 ```
-![Alt text](<Screenshot from 2024-01-03 16-40-44.png>)
-
+```
+brijesh@brijesh-Inspiron-5567:~$ minikube version
+minikube version: v1.32.0
+commit: 8220a6eb95f0a4d75f7f2d7b14cef975f050512d
+brijesh@brijesh-Inspiron-5567:~$ 
+```
 #### Step 5:
 Install Kubectl and other tools to manage applications on Kubernetes. First, add the GPG key with the
 following command:
@@ -399,7 +464,18 @@ repositories.
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee
 /etc/apt/sources.list.d/kubernetes.list
 ```
-![Alt text](<Screenshot from 2024-01-03 16-39-29.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee
+/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+bash: /etc/apt/sources.list.d/kubernetes.list: Permission denied
+root@brijesh-Inspiron-5567:/home/brijesh#
+root@brijesh-Inspiron-5567:/home/brijesh#
+root@brijesh-Inspiron-5567:/home/brijesh# echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee
+/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+root@brijesh-Inspiron-5567:/home/brijesh#
+```
 
 * **deb http://apt.kubernetes.io/ kubernetes-xenial main:** This is the actual repository information that is being printed. It specifies the Kubernetes repository with the Xenial release (for Ubuntu 16.04) and the main component.
 
@@ -414,8 +490,6 @@ apt-get update -y
 apt-get install kubectl kubeadm kubectl -y
 ```
 
-![Alt text](<Screenshot from 2024-01-03 16-38-42-1.png>)
-
 ## Now we have to start Minikube
 
 #### Step 8:
@@ -425,7 +499,34 @@ apt-get install kubectl kubeadm kubectl -y
 ```
 minikube start --force
 ```
-![Alt text](<Screenshot from 2024-01-03 16-38-08.png>)
+```
+root@brijesh-Inspiron-5567:/home/brijesh# minikube start --force
+😄  minikube v1.32.0 on Ubuntu 22.04
+❗  minikube skips various validations when --force is supplied; this may lead to unexpected behavior
+✨  Using the docker driver based on existing profile
+🛑  The "docker" driver should not be used with root privileges. If you wish to continue as root, use --force.
+💡  If you are running minikube within a VM, consider using --driver=none:
+📘    https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+💡  Tip: To remove this root owned cluster, run: sudo minikube delete
+👍  Starting control plane node minikube in cluster minikube
+🚜  Pulling base image ...
+🔄  Restarting existing docker container for "minikube" ...
+🐳  Preparing Kubernetes v1.28.3 on Docker 24.0.7 ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image docker.io/kubernetesui/dashboard:v2.7.0
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+    ▪ Using image docker.io/kubernetesui/metrics-scraper:v1.0.8
+💡  Some dashboard features require the metrics-server addon. To enable all features please run:
+
+	minikube addons enable metrics-server	
+
+
+🌟  Enabled addons: storage-provisioner, default-storageclass, dashboard
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+root@brijesh-Inspiron-5567:/home/brijesh# 
+
+```
 
 * **start:** This sub-command is used to start a Minikube cluster.
 
@@ -440,15 +541,28 @@ minikube start --force
 ```
 kubectl cluster-info
 ```
-![Alt text](<Screenshot from 2024-01-03 16-37-04.png>)
+```
+root@brijesh-Inspiron-5567:/home/brijesh# kubectl cluster-info
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+root@brijesh-Inspiron-5567:/home/brijesh# 
+
+```
 #### Step 9:
 #### Command for check all the running nodes
 
 ```
 kubectl get nodes
 ```
-![Alt text](<Screenshot from 2024-01-03 16-36-49.png>)
+```
+root@brijesh-Inspiron-5567:/home/brijesh# kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   9d    v1.28.3
+root@brijesh-Inspiron-5567:/home/brijesh# 
+
+```
 
 * **get nodes:** This is a sub-command of kubectl. When you run kubectl get nodes, it instructs kubectl to
 retrieve and display information about the nodes in the cluster.
@@ -462,8 +576,18 @@ retrieve and display information about the nodes in the cluster.
 ```
 minikube status
 ```
-![Alt text](<Screenshot from 2024-01-03 16-36-25.png>)
+```
+root@brijesh-Inspiron-5567:/home/brijesh# minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
 
+root@brijesh-Inspiron-5567:/home/brijesh# 
+
+```
 * The minikube status command is used to check the status of a Minikube cluster. When you run this command, it provides information about whether the Minikube cluster is running or stopped.
 
 ### Step 11:
@@ -473,7 +597,55 @@ minikube status
 ```
 minikube addons list
 ```
-![Alt text](<Screenshot from 2024-01-03 16-36-03.png>)
+```
+root@brijesh-Inspiron-5567:/home/brijesh# minikube addons list
+|-----------------------------|----------|--------------|--------------------------------|
+|         ADDON NAME          | PROFILE  |    STATUS    |           MAINTAINER           |
+|-----------------------------|----------|--------------|--------------------------------|
+| ambassador                  | minikube | disabled     | 3rd party (Ambassador)         |
+| auto-pause                  | minikube | disabled     | minikube                       |
+| cloud-spanner               | minikube | disabled     | Google                         |
+| csi-hostpath-driver         | minikube | disabled     | Kubernetes                     |
+| dashboard                   | minikube | enabled ✅   | Kubernetes                     |
+| default-storageclass        | minikube | enabled ✅   | Kubernetes                     |
+| efk                         | minikube | disabled     | 3rd party (Elastic)            |
+| freshpod                    | minikube | disabled     | Google                         |
+| gcp-auth                    | minikube | disabled     | Google                         |
+| gvisor                      | minikube | disabled     | minikube                       |
+| headlamp                    | minikube | disabled     | 3rd party (kinvolk.io)         |
+| helm-tiller                 | minikube | disabled     | 3rd party (Helm)               |
+| inaccel                     | minikube | disabled     | 3rd party (InAccel             |
+|                             |          |              | [info@inaccel.com])            |
+| ingress                     | minikube | disabled     | Kubernetes                     |
+| ingress-dns                 | minikube | disabled     | minikube                       |
+| inspektor-gadget            | minikube | disabled     | 3rd party                      |
+|                             |          |              | (inspektor-gadget.io)          |
+| istio                       | minikube | disabled     | 3rd party (Istio)              |
+| istio-provisioner           | minikube | disabled     | 3rd party (Istio)              |
+| kong                        | minikube | disabled     | 3rd party (Kong HQ)            |
+| kubeflow                    | minikube | disabled     | 3rd party                      |
+| kubevirt                    | minikube | disabled     | 3rd party (KubeVirt)           |
+| logviewer                   | minikube | disabled     | 3rd party (unknown)            |
+| metallb                     | minikube | disabled     | 3rd party (MetalLB)            |
+| metrics-server              | minikube | disabled     | Kubernetes                     |
+| nvidia-device-plugin        | minikube | disabled     | 3rd party (NVIDIA)             |
+| nvidia-driver-installer     | minikube | disabled     | 3rd party (Nvidia)             |
+| nvidia-gpu-device-plugin    | minikube | disabled     | 3rd party (Nvidia)             |
+| olm                         | minikube | disabled     | 3rd party (Operator Framework) |
+| pod-security-policy         | minikube | disabled     | 3rd party (unknown)            |
+| portainer                   | minikube | disabled     | 3rd party (Portainer.io)       |
+| registry                    | minikube | disabled     | minikube                       |
+| registry-aliases            | minikube | disabled     | 3rd party (unknown)            |
+| registry-creds              | minikube | disabled     | 3rd party (UPMC Enterprises)   |
+| storage-provisioner         | minikube | enabled ✅   | minikube                       |
+| storage-provisioner-gluster | minikube | disabled     | 3rd party (Gluster)            |
+| storage-provisioner-rancher | minikube | disabled     | 3rd party (Rancher)            |
+| volumesnapshots             | minikube | disabled     | Kubernetes                     |
+|-----------------------------|----------|--------------|--------------------------------|
+root@brijesh-Inspiron-5567:/home/brijesh# 
+
+
+```
 
 * **minikube:** This is the Minikube command-line tool used for managing local Kubernetes clusters.
 
@@ -488,8 +660,23 @@ minikube addons list
 ```
 kubectl get pods --all-namespaces
 ```
-![Alt text](<Screenshot from 2024-01-03 16-35-26.png>)
+```
+root@brijesh-Inspiron-5567:/home/brijesh# kubectl get pods --all-namespaces
+NAMESPACE              NAME                                         READY   STATUS    RESTARTS        AGE
+kube-system            coredns-5dd5756b68-xj4lt                     1/1     Running   1 (9d ago)      9d
+kube-system            etcd-minikube                                1/1     Running   1 (9d ago)      9d
+kube-system            kube-apiserver-minikube                      1/1     Running   1 (4m55s ago)   9d
+kube-system            kube-controller-manager-minikube             1/1     Running   1 (9d ago)      9d
+kube-system            kube-proxy-vp5lh                             1/1     Running   1 (9d ago)      9d
+kube-system            kube-scheduler-minikube                      1/1     Running   1 (9d ago)      9d
+kube-system            storage-provisioner                          1/1     Running   3 (3m58s ago)   9d
+kubernetes-dashboard   dashboard-metrics-scraper-7fd5cb4ddc-w5p7n   1/1     Running   1 (9d ago)      9d
+kubernetes-dashboard   kubernetes-dashboard-8694d4445c-qxwbm        1/1     Running   2 (3m57s ago)   9d
+metallb-system         controller-8b577655b-t2cq4                   1/1     Running   2 (3m57s ago)   9d
+metallb-system         speaker-r52kp                                4/4     Running   4 (9d ago)      9d
+root@brijesh-Inspiron-5567:/home/brijesh# 
 
+```
 * **kubectl:** This is the Kubernetes command-line tool used for interacting with Kubernetes clusters.
 
 * **get pods:** This sub-command is used to retrieve information about pods.
@@ -502,7 +689,14 @@ kubectl get pods --all-namespaces
 ```
 minikube dashboard --url
 ```
-![Alt text](<Screenshot from 2024-01-03 16-35-03.png>)
+```
+root@brijesh-Inspiron-5567:/home/brijesh# minikube dashboard --url
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ...
+http://127.0.0.1:42063/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+
+```
 
 * **minikube:** This is the Minikube command-line tool used for managing local Kubernetes clusters.
 
@@ -527,7 +721,34 @@ sudo kubectl apply -f
 https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests
 /metallb-native.yaml
 ```
-![Alt text](<Screenshot from 2024-01-03 16-34-08.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ sudo kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-native.yaml
+namespace/metallb-system unchanged
+customresourcedefinition.apiextensions.k8s.io/addresspools.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/bfdprofiles.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/bgpadvertisements.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/bgppeers.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/communities.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/ipaddresspools.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/l2advertisements.metallb.io configured
+serviceaccount/controller unchanged
+serviceaccount/speaker unchanged
+role.rbac.authorization.k8s.io/controller unchanged
+role.rbac.authorization.k8s.io/pod-lister unchanged
+clusterrole.rbac.authorization.k8s.io/metallb-system:controller unchanged
+clusterrole.rbac.authorization.k8s.io/metallb-system:speaker unchanged
+rolebinding.rbac.authorization.k8s.io/controller unchanged
+rolebinding.rbac.authorization.k8s.io/pod-lister unchanged
+clusterrolebinding.rbac.authorization.k8s.io/metallb-system:controller unchanged
+clusterrolebinding.rbac.authorization.k8s.io/metallb-system:speaker unchanged
+configmap/metallb-excludel2 unchanged
+secret/webhook-server-cert unchanged
+service/webhook-service unchanged
+deployment.apps/controller configured
+daemonset.apps/speaker configured
+validatingwebhookconfiguration.admissionregistration.k8s.io/metallb-webhook-configuration configured
+
+```
 
 * **sudo:** It's a command to execute the following command with elevated privileges. It might prompt you to enter your password.
 
@@ -543,8 +764,35 @@ sudo kubectl apply -f
 https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests
 /metallb-frr.yaml
 ```  
-![Alt text](<Screenshot from 2024-01-03 16-33-39.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ sudo kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-frr.yaml
+namespace/metallb-system unchanged
+customresourcedefinition.apiextensions.k8s.io/addresspools.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/bfdprofiles.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/bgpadvertisements.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/bgppeers.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/communities.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/ipaddresspools.metallb.io configured
+customresourcedefinition.apiextensions.k8s.io/l2advertisements.metallb.io configured
+serviceaccount/controller unchanged
+serviceaccount/speaker unchanged
+role.rbac.authorization.k8s.io/controller unchanged
+role.rbac.authorization.k8s.io/pod-lister unchanged
+clusterrole.rbac.authorization.k8s.io/metallb-system:controller unchanged
+clusterrole.rbac.authorization.k8s.io/metallb-system:speaker unchanged
+rolebinding.rbac.authorization.k8s.io/controller unchanged
+rolebinding.rbac.authorization.k8s.io/pod-lister unchanged
+clusterrolebinding.rbac.authorization.k8s.io/metallb-system:controller unchanged
+clusterrolebinding.rbac.authorization.k8s.io/metallb-system:speaker unchanged
+configmap/frr-startup unchanged
+configmap/metallb-excludel2 unchanged
+secret/webhook-server-cert unchanged
+service/webhook-service unchanged
+deployment.apps/controller configured
+daemonset.apps/speaker configured
+validatingwebhookconfiguration.admissionregistration.k8s.io/metallb-webhook-configuration configured
 
+```
 * **sudo:** This is a command to execute the following command with elevated privileges. It might prompt you to enter your password.
 
 * **kubectl apply:** This kubectl sub-command is used to apply configuration changes to a Kubernetes cluster.
@@ -560,7 +808,6 @@ https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests
   ```
   minikube profile list
   ```
-  ![Alt text](<Screenshot from 2024-01-03 16-33-19.png>)
 
   ### Solution :
 
@@ -569,14 +816,23 @@ https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests
   ```
   minikube start
   ```
-  ![Alt text](<Screenshot from 2024-01-03 16-33-01.png>)
+
 
 Now Check again for minikube profile list 
 #### Command:
   ```
   minikube profile list
   ```
-  ![Alt text](<Screenshot from 2024-01-03 16-32-45.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ minikube profile list
+|----------|-----------|---------|---------------|------|---------|---------|-------|--------|
+| Profile  | VM Driver | Runtime |      IP       | Port | Version | Status  | Nodes | Active |
+|----------|-----------|---------|---------------|------|---------|---------|-------|--------|
+| minikube | kvm2      | docker  | 192.168.39.14 | 8443 | v1.28.3 | Stopped |     1 | *      |
+|----------|-----------|---------|---------------|------|---------|---------|-------|--------|
+brijesh@brijesh-Inspiron-5567:~$ 
+
+```
 
   #### Step 2:
    Verify that metallb is listed on the available add-ons for minikube.
@@ -585,7 +841,52 @@ Now Check again for minikube profile list
   ```
   Minikube addons list
   ```
- ![Alt text](<Screenshot from 2024-01-03 16-31-23.png>) 
+```
+brijesh@brijesh-Inspiron-5567:~$ minikube addons list
+|-----------------------------|----------|--------------|--------------------------------|
+|         ADDON NAME          | PROFILE  |    STATUS    |           MAINTAINER           |
+|-----------------------------|----------|--------------|--------------------------------|
+| ambassador                  | minikube | disabled     | 3rd party (Ambassador)         |
+| auto-pause                  | minikube | disabled     | minikube                       |
+| cloud-spanner               | minikube | disabled     | Google                         |
+| csi-hostpath-driver         | minikube | disabled     | Kubernetes                     |
+| dashboard                   | minikube | disabled     | Kubernetes                     |
+| default-storageclass        | minikube | enabled ✅   | Kubernetes                     |
+| efk                         | minikube | disabled     | 3rd party (Elastic)            |
+| freshpod                    | minikube | disabled     | Google                         |
+| gcp-auth                    | minikube | disabled     | Google                         |
+| gvisor                      | minikube | disabled     | minikube                       |
+| headlamp                    | minikube | disabled     | 3rd party (kinvolk.io)         |
+| helm-tiller                 | minikube | disabled     | 3rd party (Helm)               |
+| inaccel                     | minikube | disabled     | 3rd party (InAccel             |
+|                             |          |              | [info@inaccel.com])            |
+| ingress                     | minikube | disabled     | Kubernetes                     |
+| ingress-dns                 | minikube | disabled     | minikube                       |
+| inspektor-gadget            | minikube | disabled     | 3rd party                      |
+|                             |          |              | (inspektor-gadget.io)          |
+| istio                       | minikube | disabled     | 3rd party (Istio)              |
+| istio-provisioner           | minikube | disabled     | 3rd party (Istio)              |
+| kong                        | minikube | disabled     | 3rd party (Kong HQ)            |
+| kubeflow                    | minikube | disabled     | 3rd party                      |
+| kubevirt                    | minikube | disabled     | 3rd party (KubeVirt)           |
+| logviewer                   | minikube | disabled     | 3rd party (unknown)            |
+| metallb                     | minikube | enabled ✅   | 3rd party (MetalLB)            |
+| metrics-server              | minikube | disabled     | Kubernetes                     |
+| nvidia-device-plugin        | minikube | disabled     | 3rd party (NVIDIA)             |
+| nvidia-driver-installer     | minikube | disabled     | 3rd party (Nvidia)             |
+| nvidia-gpu-device-plugin    | minikube | disabled     | 3rd party (Nvidia)             |
+| olm                         | minikube | disabled     | 3rd party (Operator Framework) |
+| pod-security-policy         | minikube | disabled     | 3rd party (unknown)            |
+| portainer                   | minikube | disabled     | 3rd party (Portainer.io)       |
+| registry                    | minikube | disabled     | minikube                       |
+| registry-aliases            | minikube | disabled     | 3rd party (unknown)            |
+| registry-creds              | minikube | disabled     | 3rd party (UPMC Enterprises)   |
+| storage-provisioner         | minikube | enabled ✅   | minikube                       |
+| storage-provisioner-gluster | minikube | disabled     | 3rd party (Gluster)            |
+| storage-provisioner-rancher | minikube | disabled     | 3rd party (Rancher)            |
+| volumesnapshots             | minikube | disabled     | Kubernetes                     |
+|-----------------------------|----------|--------------|----------------
+```
 
  #### Step 3: 
  
@@ -595,7 +896,15 @@ Now Check again for minikube profile list
   ```
   minikube addons enable metallb
   ```
-![Alt text](<Screenshot from 2024-01-03 16-31-04-1.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ minikube addons enable metallb
+❗  metallb is a 3rd party addon and is not maintained or verified by minikube maintainers, enable at your own risk.
+❗  metallb does not currently have an associated maintainer.
+    ▪ Using image quay.io/metallb/controller:v0.9.6
+    ▪ Using image quay.io/metallb/speaker:v0.9.6
+🌟  The 'metallb' addon is enabled
+
+```
  
  
  #### Step 4:
@@ -605,7 +914,18 @@ Conﬁgure the IP addresses that can be used by MetalLB for the LoadBalancer ser
 ```
 minikube addons configure metallb
 ```
-![Alt text](<Screenshot from 2024-01-03 16-29-55.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ minikube addons configure metallb
+-- Enter Load Balancer Start IP: 192.168.39.01
+--Invalid input, please enter a value:-- Enter Load Balancer Start IP: 192.168.39.14
+-- Enter Load Balancer End IP: 192.168.39.80
+    ▪ Using image quay.io/metallb/speaker:v0.9.6
+    ▪ Using image quay.io/metallb/controller:v0.9.6
+✅  metallb was successfully configured
+brijesh@brijesh-Inspiron-5567:~$ 
+
+
+```
 
 #### Step 5:
  Review the applied settings.
@@ -613,7 +933,30 @@ minikube addons configure metallb
 ```
 kubectl get configmap/config -n metallb-system -o yaml
 ```
-![Alt text](<Screenshot from 2024-01-03 16-29-30.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ kubectl get configmap/config -n metallb-system -o yaml
+apiVersion: v1
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.39.14-192.168.39.80
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"config":"address-pools:\n- name: default\n  protocol: layer2\n  addresses:\n  - 192.168.39.14-192.168.39.80\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"config","namespace":"metallb-system"}}
+  creationTimestamp: "2024-01-03T10:37:19Z"
+  name: config
+  namespace: metallb-system
+  resourceVersion: "18734"
+  uid: 1a6c4839-057e-4535-8ba4-db10f7769c20
+brijesh@brijesh-Inspiron-5567:~$ 
+
+
+```
 
 * **kubectl:** This is the Kubernetes command-line tool used for interacting with Kubernetes clusters.
 
@@ -635,8 +978,14 @@ kubectl get configmap/config -n metallb-system -o yaml
   kubectl create deployment nginx \
 --image quay.io/redhattraining/nginx:1.21 --port 80
   ```
-  ![Alt text](<Screenshot from 2024-01-03 16-29-05.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ kubectl create deployment nginx \
+--image quay.io/redhattraining/nginx:1.21 --port 80
+error: failed to create deployment: deployments.apps "nginx" already exists
+brijesh@brijesh-Inspiron-5567:~$ 
 
+
+```
 * **create deployment nginx:** This part creates a new Kubernetes deployment named "nginx."
 
 * **--image quay.io/redhattraining/nginx:1.21:** This specifies the container image for the deployment. In this case, it's using the NGINX image from the Quay.io registry with the tag version 1.21.
@@ -649,7 +998,17 @@ kubectl get configmap/config -n metallb-system -o yaml
  ```
  kubectl get deployments,pods -l app=nginx
  ```
- ![Alt text](<Screenshot from 2024-01-03 16-28-49.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ kubectl get deployments,pods -l app=nginx
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx   1/1     1            1           9d
+
+NAME                        READY   STATUS    RESTARTS        AGE
+pod/nginx-8bc664746-j7d4p   1/1     Running   2 (7d21h ago)   9d
+brijesh@brijesh-Inspiron-5567:~$ 
+
+
+```
  * **kubectl get:** The command to retrieve information about Kubernetes resources.
 * **deployments,pods:** Specifies the types of resources to retrieve information about. In this case, it's deployments and pods.
 * **-l app=nginx:** Uses a label selector to filter the resources based on the label "app" with the value "nginx". This means it will only show deployments and pods that have this specific label.
@@ -662,9 +1021,12 @@ Expose the deployment to create a load balancer service
 ```
 kubectl expose deployment nginx\ --type LoadBalancer --port 80 --target-port 80
 ```
-![Alt text](<Screenshot from 2024-01-03 16-28-07.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ kubectl create deployment nginx \
+--image quay.io/redhattraining/nginx:1.21 --port 80
+service/nginx exposed
 
-
+```
 * **kubectl expose deployment nginx:** This part of the command specifies that you want to expose the deployment named "nginx."
 
 * **--type LoadBalancer:** This option specifies the type of service to create. In this case, it's a LoadBalancer service. A LoadBalancer service provides external access to the services by creating a cloud provider load balancer.
@@ -680,7 +1042,14 @@ kubectl expose deployment nginx\ --type LoadBalancer --port 80 --target-port 80
  ```
  kubectl get services -l app=nginx
  ```
- ![Alt text](<Screenshot from 2024-01-03 16-27-51.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ kubectl get services -l app=nginx
+NAME    TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
+nginx   LoadBalancer   10.103.130.46   192.168.122.10   80:32311/TCP   9d
+brijesh@brijesh-Inspiron-5567:~$ 
+
+
+```
 
  * **kubectl get services:** This command retrieves information about services in the Kubernetes cluster.
 
@@ -693,8 +1062,35 @@ Verify that the service responds with curl
 ```
 curl http://192.168.122.10
 ```
-![Alt text](<Screenshot from 2024-01-03 16-27-24.png>)
+```
+brijesh@brijesh-Inspiron-5567:~$ curl http://192.168.122.10
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
 
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+brijesh@brijesh-Inspiron-5567:~$ 
+
+
+```
 * **curl:** This is a command-line tool for making HTTP requests. It can be used to interact with web services, download files, and perform various other HTTP-related tasks.
 
 * **http://192.168.122.10:** This is the URL or IP address to which the HTTP request is being made. In this case, the IP address is 192.168.122.10.

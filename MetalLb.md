@@ -84,15 +84,15 @@ service by default
 
 ### Configuration required to run the Kubernetes Clusters
 
-A minimum mutlicore proccessor is required.
-A minimum 2GB of RAM is required.
+A minimum mutlicore proccessor is required.<BR>
+A minimum 2GB of RAM is required.<BR>
 A minimum 20GB free space is reqiured.  
 
 
 ### My system configuration
 
-* Model name: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
-* RAM size is 8 GB
+* Model name: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz<BR>
+* RAM size is 8 GB<BR>
 * Storage 256 GB
 
 # What is the difference between MetalLB and Nginx?
